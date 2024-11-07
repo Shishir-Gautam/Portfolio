@@ -1,38 +1,164 @@
-.App {
-  text-align: center;
+/* General Body Styles */
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #fffdfd; /* White background */
+    font-family: Arial, sans-serif; /* Set a font */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar Styles */
+.navbar {
+    position: absolute; /* Allows positioning in the top-right */
+    top: 20px;         /* Adjusts the vertical position */
+    right: 20px;       /* Adjusts the horizontal position */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-list {
+    list-style: none;          /* Removes default list styling */
+    display: flex;             /* Displays items in a row */
+    gap: 20px;                 /* Space between items */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-item {
+    position: relative;        /* For positioning the pseudo-element */
+    transition: transform 0.3s, color 0.3s; /* Smooth transition for lifting and color */
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-item a {
+    text-decoration: none;     /* Removes underline from links */
+    color: #333;               /* Dark text color for visibility */
+    font-size: 18px;           /* Font size */
+    padding: 10px 15px;        /* Add padding for a button-like feel */
+    border: 2px solid transparent; /* Transparent border for hover effect */
+    border-radius: 5px;        /* Rounded corners */
+    transition: color 0.3s, border-color 0.3s, transform 0.3s; /* Transition for color, border, and scale */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Apply hover effect to all items */
+.navbar-item a:hover {
+    color: solid black;           /* Black color on hover for better visibility */
+    transform: scale(1.05);       /* Slightly enlarge on hover */
+}
+
+/* Animation and underline effect */
+.navbar-item::after {
+    content: '';
+    position: absolute;        /* Positioning the pseudo-element */
+    left: 50%;                 /* Center the line */
+    bottom: -5px;              /* Position it below the link */
+    width: 0;                  /* Start with a width of 0 */
+    height: 2px;               /* Line height */
+    background: blue;          /* Line color */
+    transition: width 0.3s, left 0.3s; /* Smooth width and left position transition */
+}
+
+.navbar-item:hover::after {
+    width: 100%;               /* Expand to full width on hover */
+    left: 0;                   /* Align to the left on hover */
+}
+
+/* Contact Button Styles */
+.contact-button {
+    color: #4fe28a;           /* Green color */
+    font-weight: bold;        /* Bold text */
+    font-size: 18px;          /* Font size */
+    text-decoration: none;    /* No underline */
+    border: none;             /* No border */
+    background: none;         /* No background color */
+    padding: 0;               /* No padding */
+    transition: color 0.3s;   /* Smooth color transition on hover */
+}
+
+.contact-button:hover {
+    color: #43c075b2;         /* Darker green on hover */
+}
+
+.contact-button:focus {
+    outline: none;            /* Remove default focus outline */
+    color: #37ca6a;           /* Slightly different green when focused */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: rgba(82, 121, 160, 0.694); /* Darker background with more opacity */
+    transition: left 0.3s;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+.sidebar.open {
+    left: 0; /* Slide in when open */
+}
+
+.sidebar-list {
+    list-style: none;
+    padding-left: 15px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Start from the bottom */
+    height: 100%;
+    font-size: 25px;
+}
+
+.sidebar-item {
+    margin: 10px 0;
+    transition: transform 0.3s; /* Smooth transition for scaling */
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+.sidebar-item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.sidebar-item a,
+.sidebar-item span {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 30px; /* Slightly smaller font for better alignment */
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Add padding for touch targets */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.sidebar-item a:hover,
+.sidebar-item span:hover {
+    color: #4fe28a; /* Change color on hover */
+}
+
+.sidebar-icon {
+    font-size: 39px;      /* Increase icon size for visibility */
+    margin-right: 15px;   /* Space between icon and text */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.sidebar-item a:hover .sidebar-icon,
+.sidebar-item span:hover .sidebar-icon {
+    transform: scale(1.3); /* Slightly enlarge icon on hover */
+}
+
+/* Menu Icon Styles */
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 36px;        /* Increase font size for better visibility */
+    cursor: pointer;
+    color: #030303;         /* White color for the icon */
+    z-index: 1001;          /* Semi-transparent blue background */
+    padding: 10px;          /* Add padding for touch area */
+}
+
+/* Change background and scale on hover */
+.menu-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }

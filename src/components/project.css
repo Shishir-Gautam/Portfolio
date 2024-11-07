@@ -1,0 +1,98 @@
+.projects-page {
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.projects-header {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card p {
+    margin: 10px 0; /* Space around the description */
+    font-size: 14px; /* Font size for the description */
+    color: #555; /* A softer color for readability */
+    height: 50px; /* Optional: fixed height for uniformity */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+    display: -webkit-box; /* For webkit browsers */
+    -webkit-box-orient: vertical; /* Vertical orientation */
+    -webkit-line-clamp: 2; /* Number of lines to show */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-links {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.project-link {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #8a2be2; /* Purple color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #551a8b; /* Darker purple on hover */
+}
+.project-card img {
+    width: 100%;
+    height: 180px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures the image covers the card area */
+    border-radius: 15px 15px 0 0; /* Rounded corners on the top */
+}
+
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* This gives it a 16:9 aspect ratio */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.rendering-warning {
+    font-size: 18px;
+    color: #ff0000; /* Brighter red color for better visibility */
+    font-weight: bold; /* Make the text bold */
+    margin-top: 12px;
+    text-align: center;
+    animation: pulse 2s infinite; /* Increase duration to slow down */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

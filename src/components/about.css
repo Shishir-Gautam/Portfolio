@@ -1,0 +1,265 @@
+:root {
+    --primary-color: #1e90ff; /* Blue accent */
+    --text-color: #333333; /* Dark text for readability */
+    --background-color: #f4f4f4; /* Light background */
+    --divider-color: #dcdcdc; /* Light divider for contrast */
+    --skill-bar-color: #1e90ff; /* Skill bar fill color */
+    --secondary-color: #888888; /* Lighter secondary color */
+}
+
+.about-page {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 60px 40px; /* Increased padding around the page */
+    box-sizing: border-box; /* Prevents padding from affecting layout */
+}
+
+/* Header Styling */
+.about-header {
+    font-size: 3.5em; /* Slightly larger for better visibility */
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Profile Circle */
+.profile-circle {
+    width: 150px;  /* Slightly larger for better visibility */
+    height: 150px; /* Maintaining the circle shape */
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+}
+
+/* Introduction Section */
+.about-intro {
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+/* Graduation Info Styling */
+.graduation-info {
+    font-size: 1.3em;
+    color: var(--text-color);
+    margin-top: 30px;
+    text-align: center;
+    line-height: 1.8;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Section Titles */
+.skills-section h2,
+.hobbies-section h2,
+.education-section h2 {
+    color: var(--primary-color);
+    font-size: 2.2em;
+    text-align: left;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+/* Skills List Styling */
+.skills-lists {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+.skills-lists li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Skill Bar */
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--divider-color);
+    margin-left: 15px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background-color: var(--skill-bar-color);
+}
+
+/* Divider */
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: var(--divider-color);
+    margin: 60px 0;
+}
+
+/* Resume Button */
+.resume-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.resume-button:hover {
+    background-color: #1a78d6;
+}
+
+/* Education Container (Flex for Better Alignment) */
+.education-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+.college-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    min-width: 270px;
+    order: 2;
+}
+
+.college-image {
+    width: 270px;
+    height: 380px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.education-details {
+    flex: 2;
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-top: 20px;
+    padding-right: 40px;
+    order: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .education-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .college-image-container {
+        margin-bottom: 30px;
+    }
+
+    .college-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .education-details {
+        text-align: center;
+        font-size: 1.3em;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-header {
+        font-size: 2.5em;
+    }
+
+    .resume-button {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+}
+
+/* Hobbies Section */
+.hobbies-section {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1.3em;
+    color: var(--text-color);
+}
+
+.hobbies-section h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hobbies-section p {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+}
+
+.hobbies-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.hobby-icon {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hobby-icon:hover {
+    transform: scale(1.15);
+    color: var(--primary-color);
+}
+
+.hobby-icon i {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+.hobby-icon:hover i {
+    color: #FFD700;
+}
+
+@media (max-width: 768px) {
+    .hobbies-section p {
+        font-size: 1.2em;
+    }
+
+    .hobbies-icons {
+        flex-direction: column;
+        gap: 35px;
+    }
+}
